@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app_25_weightapp">
+
+    <application
+        android:name=".application.WeightApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".weight_log.CreateWeightActivity"
+            android:label="@string/create_weight_activity_title"
+            android:parentActivityName=".main.MainActivity"/>
+        <activity
+            android:name=".profile.ProfileActivity"
+            android:label="@string/profile_activity_title"
+            android:parentActivityName=".main.MainActivity"/>
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/main_activity_title"
+            android:theme="@style/LoadingScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="main_activity_title">WeigthApp</string>
+    <string name="profile_activity_title">Create Profile</string>
+    <string name="create_weight_activity_title">Create New Weight Log</string>
+</resources>

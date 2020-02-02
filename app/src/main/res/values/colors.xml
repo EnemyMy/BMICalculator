@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#2196F3</color>
+    <color name="colorAccent">#F44336</color>
+
+    <color name="colorBMIVeryLow">#85C7FB</color>
+    <color name="colorBMILow">#9EE891</color>
+    <color name="colorBMINormal">#5BEF50</color>
+    <color name="colorBMIExcess">#E1F436</color>
+    <color name="colorBMIHigh">#F49F36</color>
+    <color name="colorBMISuperHigh">#F47236</color>
+    <color name="colorBMIUltraHigh">#FF5722</color>
+</resources>
