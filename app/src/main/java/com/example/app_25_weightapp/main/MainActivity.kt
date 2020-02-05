@@ -50,12 +50,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
+        if (binding.infoWarning.visibility == View.GONE)
+            menu?.getItem(1)?.isVisible = true
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.add_profile) {
             startActivity(Intent(this, ProfileActivity::class.java))
+        }
+        else if (item.itemId == R.id.delete_logs) {
+            mainActivityViewModel.deleteWeightLogs()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -68,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         }
         val adapter = binding.recyclerView.adapter as RecyclerAdapter
         weightLogData.observe(this, Observer { adapter.submitList(it) })
+        invalidateOptionsMenu()
     }
 
     private fun setRecyclerView() {

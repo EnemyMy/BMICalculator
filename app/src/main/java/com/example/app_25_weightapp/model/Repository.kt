@@ -31,4 +31,6 @@ class Repository @Inject constructor(private val profileDao: ProfileDao, private
 
     fun getWeightLogs() = weightLogDao.getLogs()
 
+    fun deleteWeightLogs() = weightLogDao.deleteLogs()
+
 }

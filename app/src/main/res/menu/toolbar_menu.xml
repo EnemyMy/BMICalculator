@@ -3,8 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/add_profile"
-        android:title="profile"
+        android:title="Profile"
         android:icon="@drawable/ic_baseline_person_add_24"
         app:iconTint="@android:color/black"
         app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/delete_logs"
+        android:title="Delete logs"
+        android:icon="@drawable/ic_baseline_delete_24"
+        app:iconTint="@android:color/black"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
 </menu>

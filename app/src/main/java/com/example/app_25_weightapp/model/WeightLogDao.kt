@@ -15,4 +15,7 @@ interface WeightLogDao {
     @Query("SELECT * FROM WeightLogEntity")
     fun getLogs() : LiveData<List<WeightLogEntity>>
 
+    @Query("DELETE FROM WeightLogEntity")
+    fun deleteLogs()
+
 }
