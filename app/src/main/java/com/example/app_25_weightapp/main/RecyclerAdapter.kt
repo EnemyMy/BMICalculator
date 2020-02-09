@@ -40,26 +40,21 @@ class RecyclerAdapter: ListAdapter<WeightLogEntity, RecyclerAdapter.RecyclerHold
         }
     }
 
-    inner class RecyclerHolder(item: RecyclerItemBinding): RecyclerView.ViewHolder(item.root) {
-
-        private val root = item.root
-        private val weight = item.recyclerItemWeight
-        private val bmi = item.recyclerItemBmi
-        private val date = item.recyclerItemDate
+    inner class RecyclerHolder(private val item: RecyclerItemBinding): RecyclerView.ViewHolder(item.root) {
 
         fun bind(weightLogEntity: WeightLogEntity) {
-            weight.text = weightLogEntity.weight
-            bmi.text = computeBmi(weightLogEntity.weight, profileEntity.height)
-            date.text = weightLogEntity.date
-            val bmiF = bmi.text.toString().toFloat()
+            item.recyclerItemWeight.text = weightLogEntity.weight
+            item.recyclerItemBmi.text = computeBmi(weightLogEntity.weight, profileEntity.height)
+            item.recyclerItemDate.text = weightLogEntity.date
+            val bmiF = item.recyclerItemBmi.text.toString().toFloat()
             when {
-                bmiF <= 16 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIVeryLow))
-                bmiF in 16.0..18.5 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMILow))
-                bmiF in 18.5..25.0 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMINormal))
-                bmiF in 25.0..30.0 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIExcess))
-                bmiF in 30.0..35.0 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIHigh))
-                bmiF in 35.0..40.0 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMISuperHigh))
-                bmiF >= 40 -> root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIUltraHigh))
+                bmiF <= 16 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIVeryLow))
+                bmiF in 16.0..18.5 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMILow))
+                bmiF in 18.5..25.0 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMINormal))
+                bmiF in 25.0..30.0 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIExcess))
+                bmiF in 30.0..35.0 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIHigh))
+                bmiF in 35.0..40.0 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMISuperHigh))
+                bmiF >= 40 -> item.root.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorBMIUltraHigh))
             }
         }
 
